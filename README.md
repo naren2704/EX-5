@@ -14,6 +14,7 @@ Start the program. Server maintains the table in which IP and corresponding MAC 
 ## PROGRAM:
 ## CLIENT:
 ```
+
 import socket
 s = socket.socket()
 s.bind(("localhost", 8000))
@@ -26,16 +27,22 @@ while True:
        c.send(address[ip].encode())
    except KeyError:
        c.send("Not found".encode())
-       ```
+       ``` 
+       
+      
        
       
 ## SERVER:
 ```
+
 import socket s=socket.socket() s.connect(("localhost", 8000)) while True: ip=input("Enter the MAC address:")
 
 s.send(ip.encode())
 print("logical Address",s.recv(1024).decode())
+
 ```
+
+
 ## CLIENT OUTPUT :
 ![image](https://github.com/naren2704/EX-5/assets/118706984/a19a86c4-419d-4296-9feb-0bb31483b098)
 
@@ -44,5 +51,5 @@ print("logical Address",s.recv(1024).decode())
 ![image](https://github.com/naren2704/EX-5/assets/118706984/533c2b3a-caad-42c0-826d-414f9e3d6452)
 
 
-RESULT:
+## RESULT:
 Thus, the python program for simulating RARP protocols using TCP was successfully executed
