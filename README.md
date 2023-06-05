@@ -13,7 +13,7 @@ Start the program. Server maintains the table in which IP and corresponding MAC 
 
 ## PROGRAM:
 ## CLIENT:
-```
+
 
 import socket
 s = socket.socket()
@@ -27,20 +27,20 @@ while True:
        c.send(address[ip].encode())
    except KeyError:
        c.send("Not found".encode())
-       ``` 
+       
        
       
        
       
 ## SERVER:
-```
+
 
 import socket s=socket.socket() s.connect(("localhost", 8000)) while True: ip=input("Enter the MAC address:")
 
 s.send(ip.encode())
 print("logical Address",s.recv(1024).decode())
 
-```
+
 
 
 ## CLIENT OUTPUT :
